@@ -1,6 +1,11 @@
-
+*,*:before,*:after{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
 body{
 	background-color: #edf0f1;
+	padding-top: 80px;
 }
 header{
 	position: fixed;
@@ -14,7 +19,6 @@ header{
 	z-index: 5;
 	background-color: #25b99a;
 	box-shadow: 0px 2px 4px rgba(44,62,80,0.15);
-	box-sizing: border-box;
 
 }
 
@@ -35,7 +39,6 @@ header input {
 	border:0px;
 	outline: none;
 	box-shadow: none;
-	box-sizing: border-box;
 
 	--moz--appearance : none;
 	--webkit--appearance : none;
@@ -70,11 +73,147 @@ header button {
 	appearance : none;
 }
 
-header button svg{
-	width: 40px;
-	height: 40px;
-	stroke-width: 0.1;
-    stroke-linejoin: round;
 
-    fill:#25b99a;
+header button svg{
+	width: 16px;
+	height: 16px;
+	top: 50%;
+	left: 50%;
+	position:absolute;
+	margin: -8px 0 0 -8px;
+}
+
+header button svg .fill{
+	fill:#25b99a;
+}
+
+.noFill{
+	fill: none;
+}
+
+div.container{
+	width: 100%;
+	float:left;
+	padding: 15px;
+
+}
+
+ul.Commun{
+	width: 100%;
+	float:left;
+}
+
+ul.Commun li{
+	width: 100%;
+	float: left;
+	min-height: 50px;
+	font-size: 14px;
+	font-weight: 400;
+	color: #444;
+	line-height: 22px;
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 0px 1px 2px rgba(44,62,80,0.1);
+	list-style: none;
+	position: relative;
+	padding: 13px 100px 14px 14px;
+	margin:0 0 10px 0;
+}
+
+ul.Commun li:last-of-type{
+	margin-bottom: 0;
+}
+
+ul.Commun li .buttons{
+	width: 100px;
+	height: 50px;
+	position: absolute;
+	top:0;
+	right: 0;
+
+}
+
+ul.Commun li .buttons button{
+	width: 50px;
+	height: 50px;
+	float:left;
+	background:none;
+	border:0;
+	box-shadow: none;
+	outline: none;
+	cursor: pointer;
+	position: relative;
+
+	--moz--appearance : none;
+	--webkit--appearance : none;
+	--ms--appearance : none;
+	--o--appearance : none;
+	appearance : none;
+}
+
+ul.Commun li .buttons button:last-of-type:before{
+	content: '';
+	height: 30px;
+	width: 1px;
+	background:#edf0f1;
+	position: absolute;
+	top: 10px;
+	left: 0;
+}
+
+ul.Commun li .buttons button svg{
+	height: 22px;
+	width: 22px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -11px 0 0 -11px;
+}
+
+ul.Commun li .buttons button.complete svg{
+	border-radius: 11px;
+	border:1.5px solid #25b99a;
+
+	-webkit-transition: background 0.2s ease;
+	-moz-transition: background 0.2s ease;
+	-ms-transition: background 0.2s ease;
+	-o-transition: background 0.2s ease;
+	transition: background 0.2s ease;
+}
+
+ul.Commun li .buttons button.remove svg .fill{
+	fill: #c0cecb;
+}
+
+ul.Commun li .buttons button svg .fill{
+	-webkit-transition: fill 0.2s ease;
+	-moz-transition: fill 0.2s ease;
+	-ms-transition: fill 0.2s ease;
+	-o-transition: fill 0.2s ease;
+	transition: fill 0.2s ease;
+}
+
+ul.Commun li .buttons button.remove:hover svg .fill{
+	fill: #e05656;
+}
+
+ul.Commun li .buttons button.complete svg .fill{
+	fill: #25b99a;
+}
+
+ul.Commun#toBeDone li .buttons button.complete:hover svg {
+	background: rgba(37, 185, 154, 0.7);
+	border:0;
+}
+ul.Commun#toBeDone li .buttons button.complete:hover svg .fill{
+	fill: #fff;
+}
+
+ul.Commun#Done li .buttons button.complete svg {
+	background: #25b99a;
+	border:0;
+}
+
+ul.Commun#Done li .buttons button.complete svg .fill{
+	fill: #fff;
 }
